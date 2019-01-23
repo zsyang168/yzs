@@ -9,6 +9,9 @@
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
 
+// 设限制URL兼容模式
+\think\Url::root('index.php?s=');
+
 return [
     '__pattern__' => [
         'name' => '\w+',
