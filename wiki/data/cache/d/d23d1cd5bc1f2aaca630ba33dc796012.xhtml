@@ -1,0 +1,162 @@
+
+<h1 class="sectionedit1" id="vim编辑器">Vim编辑器</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Vim\u7f16\u8f91\u5668&quot;,&quot;hid&quot;:&quot;vim\u7f16\u8f91\u5668&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h2 class="sectionedit2" id="基本操作">1.基本操作</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;1.\u57fa\u672c\u64cd\u4f5c&quot;,&quot;hid&quot;:&quot;\u57fa\u672c\u64cd\u4f5c&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-54&quot;} -->
+<h3 class="sectionedit3" id="移动光标">（1）移动光标</h3>
+<div class="level3">
+
+<p>
+在 vim 中, 移动光标和编辑是两件事, 正因为区分开来, 所以可以很方便的进行光标定位和编辑. 因此能更快一点移动光标是很有用的.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>w</strong>               移动光标到下一个单词开头.</div>
+</li>
+<li class="level1"><div class="li"> <strong>e</strong>               移动光标到下一个单词结尾</div>
+</li>
+<li class="level1"><div class="li"> <strong>b</strong>               移动光标到上一个单词.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>0</strong>               移动光标到本行最开头.</div>
+</li>
+<li class="level1"><div class="li"> <strong>^</strong>               移动光标到本行最开头的字符处.</div>
+</li>
+<li class="level1"><div class="li"> <strong>$</strong>               移动光标到本行结尾处.</div>
+</li>
+<li class="level1"><div class="li"> <strong>A</strong>               移动光标至行尾并处于“追加”状态，直接编辑</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>H</strong>               移动光标到屏幕的首行.</div>
+</li>
+<li class="level1"><div class="li"> <strong>M</strong>               移动光标到屏幕的中间一行.</div>
+</li>
+<li class="level1"><div class="li"> <strong>L</strong>               移动光标到屏幕的尾行.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>gg</strong>              移动光标到文档首行.</div>
+</li>
+<li class="level1"><div class="li"> <strong>G</strong>               移动光标到文档尾行.</div>
+</li>
+<li class="level1"><div class="li"> <strong>:n</strong>              跳至第n行</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>ctrl + f</strong>        向下翻页 同 page down.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ctrl + b</strong>        向上翻页 同 page up.</div>
+</li>
+<li class="level1"><div class="li"> <strong>ctrl + d</strong>        向下翻半页 此比较有用</div>
+</li>
+<li class="level1"><div class="li"> <strong>ctrl + u</strong>        向上翻半页 此比较有用</div>
+</li>
+<li class="level1"><div class="li"> <strong>ctrl + e</strong>        向下翻一行</div>
+</li>
+<li class="level1"><div class="li"> <strong>ctrl + y</strong>        向上一行</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>{</strong>	              转到上一个空行</div>
+</li>
+<li class="level1"><div class="li"> <strong>}</strong>               转到下一个空行</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>&#039;&#039;</strong>			  两个单引号, 它移动光标到上一个标记处, 比如用 gd, * 等查找到某个单词后, 可回到上次停留的位置.</div>
+</li>
+<li class="level1"><div class="li"> <strong>&#039;.</strong>			  一单一点   此命令相当好使, 它移动光标到上一次的修改行.</div>
+</li>
+<li class="level1"><div class="li"> <strong>`.</strong>			  一倒引一点 此命令相当强大, 它移动光标到上一次的修改点.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff081\uff09\u79fb\u52a8\u5149\u6807&quot;,&quot;hid&quot;:&quot;\u79fb\u52a8\u5149\u6807&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;55-1727&quot;} -->
+<h3 class="sectionedit4" id="查找">(2)查找</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <strong>/xxx(?xxx)</strong>      表示在整篇文档中向上（向下）搜索匹配xxx的字符串(xxx可以是正规表达式)</div>
+</li>
+<li class="level1"><div class="li"> <strong>*(#)</strong>			  当光标停留在某个单词上时, 输入这条命令表示查找与该单词匹配的下(上)一个单词.</div>
+</li>
+<li class="level1"><div class="li"> <strong>g*(g#)</strong>		  匹配包含该单词的所有字符串.</div>
+</li>
+<li class="level1"><div class="li"> <strong>gd</strong>			  本命令查找与光标所在单词相匹配的单词, 并停留在文档的非注释段中第一次出现这个单词的地方</div>
+</li>
+<li class="level1"><div class="li"> <strong>%</strong>				  本命令查找与光标所在处相匹配的反括号, 包括 () [] {}</div>
+</li>
+<li class="level1"><div class="li"> <strong>f(F)x</strong>			  本命令表示在光标所在行进行查找, 查找光标右(左)方第一个x字符.</div>
+</li>
+</ul>
+
+<p>
+找到后:<br/>
+
+输入<strong>n</strong> 表示继续往下找<br/>
+
+输入<strong>N</strong>表示反方向查找
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;(2)\u67e5\u627e&quot;,&quot;hid&quot;:&quot;\u67e5\u627e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;1728-2472&quot;} -->
+<h3 class="sectionedit5" id="替换">(3)替换</h3>
+<div class="level3">
+
+<p>
+替换是 vim 的强项,使用“:s/模式/字符串/标志”进行替换，其中的“模式”是一个正则表达式，可以用来匹配字符串.以下提供几个例子.
+</p>
+<ul>
+<li class="level1"><div class="li"> <strong>:s/aa/bb/g</strong>             将光标所在行出现的所有包含 aa 的字符串中的 aa 替换为 bb</div>
+</li>
+<li class="level1"><div class="li"> <strong>:s/\&lt;aa\&gt;/bb/g</strong>         将光标所在行出现的所有 aa 替换为 bb, 仅替换 aa 这个单词</div>
+</li>
+<li class="level1"><div class="li"> <strong>:%s/aa/bb/g</strong>            将文档中出现的所有包含 aa 的字符串中的 aa 替换为 bb</div>
+</li>
+<li class="level1"><div class="li"> <strong>:12,23s/aa/bb/g</strong>        将从12行到23行中出现的所有包含 aa 的字符串中的 aa 替换为 bb</div>
+</li>
+<li class="level1"><div class="li"> <strong>:12,23s/^/#/</strong>           将从12行到23行的行首加入 # 字符</div>
+</li>
+<li class="level1"><div class="li"> <strong>:%s/\(\s*\n\)\+/\r/</strong>    将所有不包含字符(空格也不包含)的空行删除.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;(3)\u66ff\u6362&quot;,&quot;hid&quot;:&quot;\u66ff\u6362&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2473-3267&quot;} -->
+<h2 class="sectionedit6" id="配置">2.配置</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;2.\u914d\u7f6e&quot;,&quot;hid&quot;:&quot;\u914d\u7f6e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;3268-3291&quot;} -->
+<h2 class="sectionedit7" id="插件">3.插件</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;3.\u63d2\u4ef6&quot;,&quot;hid&quot;:&quot;\u63d2\u4ef6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;3292-3312&quot;} -->
+<h3 class="sectionedit8" id="ctags">（1）ctags</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff081\uff09ctags&quot;,&quot;hid&quot;:&quot;ctags&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;3313-3335&quot;} -->
+<h3 class="sectionedit9" id="sidebar">（2）sidebar</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff082\uff09sidebar&quot;,&quot;hid&quot;:&quot;sidebar&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;3336-3360&quot;} -->
+<h3 class="sectionedit10" id="cscope">（3）cscope</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff083\uff09cscope&quot;,&quot;hid&quot;:&quot;cscope&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;3361-3384&quot;} -->
+<h3 class="sectionedit11" id="nerdtree">（4）nerdtree</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff084\uff09nerdtree&quot;,&quot;hid&quot;:&quot;nerdtree&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;3385-&quot;} -->

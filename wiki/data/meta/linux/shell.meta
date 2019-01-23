@@ -1,0 +1,12 @@
+a:2:{s:7:"current";a:9:{s:4:"date";a:2:{s:7:"created";i:1543832871;s:8:"modified";i:1548042630;}s:4:"user";s:0:"";s:7:"creator";s:0:"";s:11:"last_change";a:8:{s:4:"date";i:1548042630;s:2:"ip";s:13:"61.160.89.114";s:4:"type";s:1:"E";s:2:"id";s:11:"linux:shell";s:4:"user";s:3:"yzs";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:175;}s:11:"contributor";a:1:{s:3:"yzs";s:9:"杨子松";}s:5:"title";s:11:"Shell命令";s:11:"description";a:2:{s:15:"tableofcontents";a:8:{i:0;a:4:{s:3:"hid";s:11:"shell命令";s:5:"title";s:11:"Shell命令";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:1;a:4:{s:3:"hid";s:12:"文件挂载";s:5:"title";s:14:"1.文件挂载";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:2;a:4:{s:3:"hid";s:6:"交互";s:5:"title";s:8:"2.交互";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:3;a:4:{s:3:"hid";s:3:"awk";s:5:"title";s:6:"3. awk";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:4;a:4:{s:3:"hid";s:12:"目录操作";s:5:"title";s:15:"4. 目录操作";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:5;a:4:{s:3:"hid";s:4:"grep";s:5:"title";s:7:"5. grep";s:4:"type";s:2:"ul";s:5:"level";i:3;}i:6;a:4:{s:3:"hid";s:11:"shell脚本";s:5:"title";s:11:"Shell脚本";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:7;a:4:{s:3:"hid";s:6:"变量";s:5:"title";s:8:"1.变量";s:4:"type";s:2:"ul";s:5:"level";i:3;}}s:8:"abstract";s:291:"Shell命令
+
+1.文件挂载
+
+（1）挂载共享文件夹
+
+	*  首先创建你要映射的目录，比如我创建的是目录是： /root/share/
+		*  用mount命令挂载：
+
+mount -t cifs -o
+ username=“”,password=“”,rw,file_mode=0777,dir_mode=0777,uid=0,gid=0
+ share_dir/root/share";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}s:8:"relation";a:1:{s:10:"firstimage";s:0:"";}}s:10:"persistent";a:5:{s:4:"date";a:2:{s:7:"created";i:1543832871;s:8:"modified";i:1548042630;}s:4:"user";s:0:"";s:7:"creator";s:0:"";s:11:"last_change";a:8:{s:4:"date";i:1548042630;s:2:"ip";s:13:"61.160.89.114";s:4:"type";s:1:"E";s:2:"id";s:11:"linux:shell";s:4:"user";s:3:"yzs";s:3:"sum";s:0:"";s:5:"extra";s:0:"";s:10:"sizechange";i:175;}s:11:"contributor";a:1:{s:3:"yzs";s:9:"杨子松";}}}

@@ -1,0 +1,14 @@
+==== Linux笔记 ====
+	*[[linux:ubuntu|Ubuntu]]
+	*[[linux:centos|CentOs]]
+	*[[linux:system|System]]
+	*[[linux:rtl|运行库]]
+	*[[linux:shell|Shell]]
+	*[[linux:vim|Vim]]
+	*[[linux:git|Git]]
+	*[[linux:svn|Svn]]
+	*[[linux:dpdk|Dpdk]]
+
+==== 编程语言 ====
+	*[[language:c|C]]
+	*[[language:python|Python]]

@@ -1,0 +1,40 @@
+
+<h3 class="sectionedit1" id="运行库问题">运行库问题</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="ltermcap">1.-ltermcap</h4>
+<div class="level4">
+
+<p>
+<strong>ubuntu:</strong>apt-get install libncurses5-dev<br/>
+
+<strong>centos:</strong>yum install ncurses-devel
+</p>
+
+</div>
+
+<h4 id="位机上编译32位目标文件">2.64位机上编译32位目标文件</h4>
+<div class="level4">
+
+<p>
+<strong>ubuntu:</strong><br/>
+
+<strong>centos:</strong>yum install libgcc.i686  glibc-devel.i686 -y<br/>
+
+<strong>编译:</strong>gcc 添加CFLAGS+=-m32
+</p>
+
+</div>
+
+<h4 id="lz">3.-lz</h4>
+<div class="level4">
+
+<p>
+<strong>ubuntu:</strong><br/>
+
+<strong>centos:</strong>yum install zlib
+</p>
+
+</div>

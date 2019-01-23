@@ -1,0 +1,6 @@
+====== 软件安装 ======
+===== python-pip =====
+  - 首先安装epel扩展源：''sudo yum -y install epel-release''
+  - 然后再安装pip: ''sudo yum -y install python-pip''
+
+

@@ -1,0 +1,14 @@
+==== 运行库问题 ====
+=== 1.-ltermcap ===
+**ubuntu:**apt-get install libncurses5-dev\\
+**centos:**yum install ncurses-devel
+
+=== 2.64位机上编译32位目标文件 ===
+**ubuntu:**\\
+**centos:**yum install libgcc.i686  glibc-devel.i686 -y\\
+**编译:**gcc 添加CFLAGS+=-m32
+
+=== 3.-lz ===
+**ubuntu:**\\
+**centos:**yum install zlib
+

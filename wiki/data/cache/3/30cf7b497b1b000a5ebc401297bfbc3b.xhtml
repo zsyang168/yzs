@@ -1,0 +1,134 @@
+
+<h2 class="sectionedit1" id="shell命令">Shell命令</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Shell\u547d\u4ee4&quot;,&quot;hid&quot;:&quot;shell\u547d\u4ee4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-24&quot;} -->
+<h3 class="sectionedit2" id="文件挂载">1.文件挂载</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="挂载共享文件夹">（1）挂载共享文件夹</h4>
+<div class="level4">
+<ol>
+<li class="level1"><div class="li"> 首先创建你要映射的目录，比如我创建的是目录是： /root/share/</div>
+</li>
+<li class="level2"><div class="li"> 用mount命令挂载：</div>
+</li>
+</ol>
+
+<p>
+<code>mount -t cifs -o
+ username=“”,password=“”,rw,file_mode=0777,dir_mode=0777,uid=0,gid=0
+ share_dir/root/share</code>
+</p>
+
+<p>
+<strong>例子：</strong><br/>
+
+</p>
+<pre class="code">mount -t cifs -o 
+username=&quot;root&quot;,password=&quot;password&quot;,
+rw,file_mode=0777,dir_mode=0777,uid=0,gid=0 
+//192.168.1.1/root root</pre>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;1.\u6587\u4ef6\u6302\u8f7d&quot;,&quot;hid&quot;:&quot;\u6587\u4ef6\u6302\u8f7d&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;25-470&quot;} -->
+<h3 class="sectionedit3" id="交互">2.交互</h3>
+<div class="level3">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;2.\u4ea4\u4e92&quot;,&quot;hid&quot;:&quot;\u4ea4\u4e92&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;471-490&quot;} -->
+<h3 class="sectionedit4" id="awk">3. awk</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="分割字符串">(1)分割字符串</h4>
+<div class="level4">
+
+<p>
+想从目标字符串中，提取想要的字符，可以用awk命令。<br/>
+
+<strong>例如：</strong><br/>
+
+从&lt;version&gt;1.3.1-SNAPSHOT&lt;/version&gt;中提取版本号，则可以用命令：awk -F&#039;[&lt;&gt;]&#039; &#039;{print $3}&#039;<br/>
+
+# echo “&lt;version&gt;1.3.1-SNAPSHOT&lt;/version&gt;“|awk -F&#039;[&lt;&gt;]&#039; &#039;{print $3}&#039;<br/>
+
+<strong>命令解析：</strong><br/>
+
+-F定义了分隔符，默认以空格分割。此处定义了以&lt;&gt;两个分隔符进行分割<br/>
+
+print $3，打印分割后的第三列。$0为分割前的整个字符串<br/>
+
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;3. awk&quot;,&quot;hid&quot;:&quot;awk&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;491-998&quot;} -->
+<h3 class="sectionedit5" id="目录操作">4. 目录操作</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="ls">ls</h4>
+<div class="level4">
+
+</div>
+
+<h4 id="cd">cd</h4>
+<div class="level4">
+
+</div>
+
+<h4 id="mkdir">mkdir</h4>
+<div class="level4">
+
+</div>
+
+<h4 id="rmdir">rmdir</h4>
+<div class="level4">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;4. \u76ee\u5f55\u64cd\u4f5c&quot;,&quot;hid&quot;:&quot;\u76ee\u5f55\u64cd\u4f5c&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;999-1075&quot;} -->
+<h3 class="sectionedit6" id="grep">5. grep</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> grep -C num &lt;file&gt; 显示匹配行及上下num行</div>
+</li>
+<li class="level1"><div class="li"> grep -B num &lt;file&gt; 显示匹配行及前num行</div>
+</li>
+<li class="level1"><div class="li"> grep -A num &lt;file&gt; 显示匹配行及后num行</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;5. grep&quot;,&quot;hid&quot;:&quot;grep&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1076-1251&quot;} -->
+<h2 class="sectionedit7" id="shell脚本">Shell脚本</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Shell\u811a\u672c&quot;,&quot;hid&quot;:&quot;shell\u811a\u672c&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1252-1276&quot;} -->
+<h3 class="sectionedit8" id="变量">1.变量</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="自增">自增</h4>
+<div class="level4">
+<ol>
+<li class="level1"><div class="li"> i=`expr $i + 1`</div>
+</li>
+<li class="level1"><div class="li"> let i+=1</div>
+</li>
+<li class="level1"><div class="li"> ( (i++))</div>
+</li>
+<li class="level1"><div class="li"> i=$[$i+1]</div>
+</li>
+<li class="level1"><div class="li"> i=$( ( $i + 1 )) </div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;1.\u53d8\u91cf&quot;,&quot;hid&quot;:&quot;\u53d8\u91cf&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;1277-&quot;} -->

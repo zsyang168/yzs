@@ -1,0 +1,50 @@
+===== Shell命令 =====
+==== 1.文件挂载 ====
+=== （1）挂载共享文件夹 ===
+    - 首先创建你要映射的目录，比如我创建的是目录是： /root/share/
+    - 用mount命令挂载：
+''mount -t cifs -o
+ username="",password="",rw,file_mode=0777,dir_mode=0777,uid=0,gid=0
+ share_dir/root/share''
+
+**例子：**\\
+  mount -t cifs -o 
+  username="root",password="password",
+  rw,file_mode=0777,dir_mode=0777,uid=0,gid=0 
+  //192.168.1.1/root root
+
+
+
+
+==== 2.交互 ====
+
+==== 3. awk ====
+=== (1)分割字符串 ===
+想从目标字符串中，提取想要的字符，可以用awk命令。\\
+**例如：**\\
+从<version>1.3.1-SNAPSHOT</version>中提取版本号，则可以用命令：awk -F'[<>]' '{print $3}'\\
+# echo "<version>1.3.1-SNAPSHOT</version>"|awk -F'[<>]' '{print $3}'\\
+**命令解析：**\\
+-F定义了分隔符，默认以空格分割。此处定义了以<>两个分隔符进行分割\\
+print $3，打印分割后的第三列。$0为分割前的整个字符串\\
+
+==== 4. 目录操作 ====
+=== ls ===
+=== cd ===
+=== mkdir ===
+=== rmdir ===
+
+==== 5. grep ====
+  - grep -C num <file> 显示匹配行及上下num行
+  - grep -B num <file> 显示匹配行及前num行
+  - grep -A num <file> 显示匹配行及后num行
+ 
+===== Shell脚本 ===== 
+==== 1.变量 ====
+=== 自增 ===
+  - i=`expr $i + 1`
+  - let i+=1
+  - ( (i++))
+  - i=$[$i+1]
+  - i=$( ( $i + 1 )) 
+

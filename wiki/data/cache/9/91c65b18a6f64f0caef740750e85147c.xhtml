@@ -1,0 +1,55 @@
+
+<div><div id="nojs_indexmenu_2691875675c08d0f8bf189" data-jsajax="" class="indexmenu_nojs">
+
+<ul class="idx">
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:centos" class="wikilink1" title="linux:centos">centos</a></div></li>
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:dpdk" class="wikilink1" title="linux:dpdk">dpdk</a></div></li>
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:git" class="wikilink1" title="linux:git">git</a></div></li>
+<li class="level1" ><div class="li"><span class="curid"><a href="/yzs/wiki/doku.php?id=linux:rtl" class="wikilink1" title="linux:rtl">rtl</a></span></div></li>
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:shell" class="wikilink1" title="linux:shell">shell</a></div></li>
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:svn" class="wikilink1" title="linux:svn">svn</a></div></li>
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:ubuntu" class="wikilink1" title="linux:ubuntu">ubuntu</a></div></li>
+<li class="level1" ><div class="li"><a href="/yzs/wiki/doku.php?id=linux:vim" class="wikilink1" title="linux:vim">vim</a></div></li>
+</ul>
+</div></div>
+
+<h3 class="sectionedit1" id="运行库问题">运行库问题</h3>
+<div class="level3">
+
+</div>
+
+<h4 id="ltermcap">1.-ltermcap</h4>
+<div class="level4">
+
+<p>
+<strong>ubuntu:</strong>apt-get install libncurses5-dev<br/>
+
+<strong>centos:</strong>yum install ncurses-devel
+</p>
+
+</div>
+
+<h4 id="位机上编译32位目标文件">2.64位机上编译32位目标文件</h4>
+<div class="level4">
+
+<p>
+<strong>ubuntu:</strong><br/>
+
+<strong>centos:</strong>yum install libgcc.i686  glibc-devel.i686 -y<br/>
+
+<strong>编译:</strong>gcc 添加CFLAGS+=-m32
+</p>
+
+</div>
+
+<h4 id="lz">3.-lz</h4>
+<div class="level4">
+
+<p>
+<strong>ubuntu:</strong><br/>
+
+<strong>centos:</strong>yum install zlib
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u8fd0\u884c\u5e93\u95ee\u9898&quot;,&quot;hid&quot;:&quot;\u8fd0\u884c\u5e93\u95ee\u9898&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;23-&quot;} -->

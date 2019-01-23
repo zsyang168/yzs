@@ -1,0 +1,67 @@
+====== 常用操作 ======
+
+===== 1.提交到本地仓库 =====
+''git add <file>''\\
+''git commit  | git commit -m "xxx"''
+    
+===== 2.查看日志 =====
+''git log [--pretty=oneline] ''**[单行]显示提交日志**\\
+''git reflog''**显示每次命令**
+    
+===== 3.版本回退 =====
+''git reset --hard HEAD^''**回退到上一个版本**\\
+''git reset --hard HEAD^^''**回退到上上个版本**\\
+''git reset --hard  <version num>''**回退到指定版本**
+
+===== 4.分支 =====
+**查看分支：**''git branch''\\
+**创建分支：**''git branch <name>''\\
+**切换分支：**''git checkout <name>''\\
+**创建+切换分支：**''git checkout -b <name>''\\
+**合并某分支到当前分支：**''git merge <name>''\\
+**删除分支：**''git branch -d <name>''
+
+===== 5.删除远程仓库 =====
+**回退版本：**''git reset --hard commit-id''\\
+**强制推送：**''git push -f''\\
+
+===== 6.删除某个提交 =====
+（1）''git rebase -i commit-id(要删除的commit-id的前一个)''\\
+（2）修改要删除commit-id前面的pick为drop（**注：旧版本不支持,该commit不能已提交远程**）
+
+===== 7.修改commit信息 =====
+''git commit --amend''
+
+===== 8.生成公钥 =====
+'' ssh-keygen -t rsa -C 'email' ''
+
+====== 2篇笔记 ======
+===== （1）git commit、git push、git pull、 git fetch、git merge 的含义与区别 =====
+   * git commit：是将本地修改过的文件提交到本地库中；
+   * git push：是将本地库中的最新信息发送给远程库；
+   * git pull：是从远程获取最新版本到本地，并自动merge；
+   * git fetch：是从远程获取最新版本到本地，不会自动merge；
+   * git merge：是用于从指定的commit(s)合并到当前分支，用来合并两个分支；
+
+===== （2）git 基本操作注意点总结: =====
+
+==== 复制本地仓库的命令方式 ====
+''git clone <source repository> <destination repository>''\\
+**<source repository>：**想克隆的本地仓库路径\\
+**<destination repository>：**想克隆去另一个地方的路径
+
+**注意：**
+  - 数字列表项目 <destination repository> 目录必须没有在文件系统上创建，或创建了但里面为空，不然会克隆不成功。
+  - 与从远程拉取仓库不同，路径的最后不用写 .git 来表明这是一个仓库。
+
+==== git diff ====
+  * git diff：查看工作区与暂存区的不同。
+  * git diff –cached [<commit>]：查看暂存区与指定提交版本的不同，版本可缺省（为HEAD）。
+  * git diff <commit>：查看工作区与指定提交版本的不同。
+  * git diff <commit>..<commit>：查看2个指定提交版本的不同，其中任一可缺省（为HEAD）。
+  * git diff <commit>...<commit>：查看2个不同分支指定提交版本的不同，其中任一可缺省（为HEAD），该命令相当于git diff $(git-merge-base A B) B。
+
+ 
+ 
+ 
+

@@ -1,0 +1,188 @@
+
+<h2 class="sectionedit1" id="软件安装">1.软件安装</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;1.\u8f6f\u4ef6\u5b89\u88c5&quot;,&quot;hid&quot;:&quot;\u8f6f\u4ef6\u5b89\u88c5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h3 class="sectionedit2" id="deb本地安装">（1）deb本地安装</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"><code>dpkg -i &lt;package.deb&gt;</code> 安装一个 Debian 软件包，如你手动下载的文件。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg -c &lt;package.deb&gt;</code> 列出 &lt;package.deb&gt; 的内容。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg -I &lt;package.deb&gt;</code> 从 &lt;package.deb&gt; 中提取包裹信息。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg -r &lt;package&gt;</code> 移除一个已安装的包裹。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg -P &lt;package&gt;</code> 完全清除一个已安装的包裹。和 remove 不同的是，remove 只是删掉数据和可执行文件，purge 另外还删除所有的配制文件。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg -L &lt;package&gt;</code> 列出 &lt;package&gt; 安装的所有文件清单。同时请看 dpkg -c 来检查一个 .deb 文件的内容。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg -s &lt;package&gt;</code> 显示已安装包裹的信息。同时请看 apt-cache 显示 Debian 存档中的包裹信息，以及 dpkg -I 来显示从一个 .deb 文件中提取的包裹信息。</div>
+</li>
+<li class="level1"><div class="li"><code>dpkg-reconfigure &lt;package&gt;</code>重新配制一个已经安装的包裹，如果它使用的是 debconf (debconf 为包裹安装提供了一个统一的配制界面)。</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff081\uff09deb\u672c\u5730\u5b89\u88c5&quot;,&quot;hid&quot;:&quot;deb\u672c\u5730\u5b89\u88c5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-1017&quot;} -->
+<h3 class="sectionedit3" id="apt安装">（2）apt安装</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"><code>apt search package</code> #搜索包</div>
+</li>
+<li class="level1"><div class="li"><code>apt show package</code> #获取包的相关信息，如说明、大小、版本等</div>
+</li>
+<li class="level1"><div class="li"><code>apt depends package</code> #了解使用依赖</div>
+</li>
+<li class="level1"><div class="li"><code>apt rdepends package</code> #查看该包被哪些包依赖</div>
+</li>
+<li class="level1"><div class="li"><code>apt-cache pkgnames</code>  #执行pkgnames子命令列出当前所有可用的软件包</div>
+</li>
+<li class="level1"><div class="li"><code>apt policy package</code> #使用policy命令显示软件包的安装状态和版本信息。</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt install package</code> #安装包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt install package=version</code> #安装指定版本的包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt install package –reinstall</code> #重新安装包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt -f install</code> #修复安装, “-f = –fix-missing”</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt remove package</code> #删除包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt purge package</code>  #删除包，包括删除配置文件等</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt autoremove</code> #自动卸载所有未使用的软件包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt source package</code> #下载该包的源代码</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt update</code> #更新apt软件源信息</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt upgrade</code> #更新已安装的包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt dist-upgrade</code> #升级系统</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt dselect-upgrade</code> #使用dselect升级</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt build-dep package</code> #安装相关的编译环境</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt clean &amp;&amp; sudo apt autoclean</code> #清理无用的包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt clean</code>  #清理已下载的软件包，实际上是清楚/var/cache/apt/archives目录中的软件包</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt autoclean</code>  #删除已经卸载的软件包备份</div>
+</li>
+<li class="level1"><div class="li"><code>sudo apt-get check</code> #检查是否有损坏的依赖</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\uff082\uff09apt\u5b89\u88c5&quot;,&quot;hid&quot;:&quot;apt\u5b89\u88c5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;1018-2460&quot;} -->
+<h2 class="sectionedit4" id="网络配置">2.网络配置</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;2.\u7f51\u7edc\u914d\u7f6e&quot;,&quot;hid&quot;:&quot;\u7f51\u7edc\u914d\u7f6e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;2461-2487&quot;} -->
+<h3 class="sectionedit5" id="网卡配置">网卡配置</h3>
+<div class="level3">
+
+<p>
+配置文件：<strong>/etc/network/interfaces</strong>
+</p>
+
+</div>
+
+<h4 id="dhcp">DHCP</h4>
+<div class="level4">
+
+<p>
+#The primary network interface - use DHCP to find our address<br/>
+
+auto eth0<br/>
+
+iface eth0 inet dhcp<br/>
+
+</p>
+
+</div>
+
+<h4 id="静态ip">静态IP</h4>
+<div class="level4">
+
+<p>
+#The primary network interface<br/>
+
+auto eth0<br/>
+
+iface eth0 inet static<br/>
+
+address 192.168.2.8<br/>
+
+gateway 192.168.2.1<br/>
+
+netmask 255.255.255.0<br/>
+
+</p>
+
+</div>
+
+<h4 id="设定第二个ubuntu_ip地址_虚拟ip地址">设定第二个Ubuntu IP地址(虚拟IP地址)</h4>
+<div class="level4">
+
+<p>
+auto eth0:1  <br/>
+
+iface eth0:1 inet static \\ 
+address x.x.x.x  <br/>
+
+netmask x.x.x.x  <br/>
+
+network x.x.x.x  <br/>
+
+broadcast x.x.x.x  <br/>
+
+gateway x.x.x.x <br/>
+
+</p>
+
+</div>
+
+<h4 id="设置主机名称_hostname">设置主机名称(hostname)</h4>
+<div class="level4">
+
+<p>
+使用下面的命令来查看当前主机的主机名称：<strong> sudo /bin/hostname </strong><br/>
+
+使用下面的命令来设置当前主机的主机名称：<strong> sudo /bin/hostname newname </strong><br/>
+
+系统启动时，它会从/bin/hostname来读取主机的名称。
+</p>
+
+</div>
+
+<h4 id="配置dns">配置DNS</h4>
+<div class="level4">
+
+<p>
+修改：<strong> /etc/resolv.conf </strong>
+</p>
+
+<p>
+search chotim.com<br/>
+
+nameserver 192.168.2.2
+</p>
+
+</div>
+
+<h4 id="手动重启网络服务">手动重启网络服务</h4>
+<div class="level4">
+
+<p>
+sudo /etc/init.d/networking restart
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7f51\u5361\u914d\u7f6e&quot;,&quot;hid&quot;:&quot;\u7f51\u5361\u914d\u7f6e&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;2488-&quot;} -->

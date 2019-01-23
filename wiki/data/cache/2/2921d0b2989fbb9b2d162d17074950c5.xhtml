@@ -1,0 +1,82 @@
+
+<h1 class="sectionedit1" id="数据结构">数据结构</h1>
+<div class="level1">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u6570\u636e\u7ed3\u6784&quot;,&quot;hid&quot;:&quot;\u6570\u636e\u7ed3\u6784&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;1-27&quot;} -->
+<h2 class="sectionedit2" id="结构体">结构体</h2>
+<div class="level2">
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;\u7ed3\u6784\u4f53&quot;,&quot;hid&quot;:&quot;\u7ed3\u6784\u4f53&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;28-49&quot;} -->
+<h3 class="sectionedit3" id="stat">stat</h3>
+<div class="level3">
+
+<p>
+/! 需要包含de头文件<br/>
+
+<code>
+#include &lt;sys/types.h&gt;<br/>
+   
+#include &lt;sys/stat.h&gt;   <br/>
+
+int stat(
+　　const char *filename    文件或者文件夹的路径<br/>
+
+　　, struct stat *buf      获取的信息保存在内存中<br/>
+
+); ! prototype,原型   <br/>
+ 
+</code>
+</p>
+
+<p>
+正确——返回0
+</p>
+
+<p>
+错误——返回-1，具体错误码保存在errno中
+</p>
+
+<p>
+<code>
+struct stat<br/>
+ 
+{   
+    dev_t       st_dev;     /* ID of device containing file -文件所在设备的ID*/ <br/>
+
+    ino_t       st_ino;     /* inode number -inode节点号*/    <br/>
+
+    mode_t      st_mode;    /* protection -保护模式?*/    <br/>
+
+    nlink_t     st_nlink;   /* number of hard links -链向此文件的连接数(硬连接)*/    <br/>
+
+    uid_t       st_uid;     /* user ID of owner -user id*/    <br/>
+
+    gid_t       st_gid;     /* group ID of owner - group id*/    <br/>
+
+    dev_t       st_rdev;    /* device ID (if special file) -设备号，针对设备文件*/   <br/>
+
+    off_t       st_size;    /* total size, in bytes -文件大小，字节为单位*/    <br/>
+
+    blksize_t   st_blksize; /* blocksize for filesystem I/O -系统块的大小*/   <br/>
+
+    blkcnt_t    st_blocks;  /* number of blocks allocated -文件所占块数*/    <br/>
+
+    time_t      st_atime;   /* time of last access -最近存取时间*/    <br/>
+
+    time_t      st_mtime;   /* time of last modification -最近修改时间*/   <br/>
+
+    time_t      st_ctime;   /* time of last status change - */    <br/>
+
+};  <br/>
+
+</code>
+</p>
+
+<p>
+_stat结构体是文件（夹）信息的结构体，定义如下：以上信息就是可以通过_stat函数获取的所有相关信息，一般情况下，我们关心文件大小和创建时间、访问时间、修改时间。
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;stat&quot;,&quot;hid&quot;:&quot;stat&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;50-&quot;} -->

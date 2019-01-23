@@ -1,0 +1,17 @@
+====== 模块 ======
+
+===== 1. pexpect模块 =====
+==== spawn类 ====
+  * 第一步与终端建立连接 '' **child = pexpect.spawn('scp foo user@example.com:.')** ''
+  * 第二步等待终端返回特定内容 '' **child.expect('Password:')** ''
+  * 第三步根据返回内容发送命令进行交互 '' **child.sendline(mypassword)** ''
+
+====== Flask ======
+===== 1.结构 =====
+===== 2.入口 =====
+
+
+
+
+
+
